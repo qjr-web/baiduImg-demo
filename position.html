@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>position</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <style>
+        .box1 {
+            /* relative有两种效果
+             1、让元素相对自己之前的位置定位
+             2、也可能是为了让当前元素脱离文档，让其后代元素父参照物为自己 ，默认情况下父参照物为body
+            */
+            position: relative;
+            left: 100px;
+            top: 100px;
+            width: 300px;
+            height: 300px;
+            background-color: tomato;
+        }
+        .box2 {
+            position: absolute;
+            left: 50px;
+            top: 50px;
+            width: 100px;
+            height: 100px;
+            background-color:turquoise;
+            /* 在定位的元素中，如果我们想挑战层级位置，可以通过z-index ，默认是0，值越大约在上面*/
+            z-index: 17;
+        }
+        .box3 {
+            /* 实现位置居中 */
+            position: absolute;
+            left: 50%;
+            margin-left: -50px;
+            top: 50%;
+            margin-top: -50px;
+            width: 100px;
+            height: 100px;
+            background-color: rgb(255, 208, 0);
+            z-index: 18;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1">
+        <box class="box2"></box>
+        <div class="box3"></div>
+    </div>
+    
+</body>
+</html>

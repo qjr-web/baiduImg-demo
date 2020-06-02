@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <style>
+        /* 第一种水平对齐方式：display: inline-block;
+            转换为行内块级元素时display: inline-block;
+            但存在一个问题：会把元素之间的换行和空格当做空白元素（也想相当于文本），导致元素与元素之间存在间隙
+            取消间隙的方法：让那个其所在的父容器的文字大小为零，这样可以让文本不占任何的位置。（为防止当前元素字体也没有，还需单独设置字体）
+        */
+        /* 第二种水平对齐方式：基于浮动方式实现水平排列
+        * float；left；
+            问题:默认情况下，子元素当做内容会撑开父元素的高度（因为盒子的高度默认是auto）；但是一旦子元素设置浮动。当前浮动的元素将脱离文档流（和父元素不在同一个平面中了），导师父元素的高度为零
+            解决方案：给父元素末尾最佳一个虚拟元素，并且设置clear：both属性，来清除子元素浮动对父元素的影响
+        */
+        /* .box:after给元素末尾创建虚拟元素content，并且设置内容和样式等 */
+
+        /* 在reset.css中设置了clearfix样式，这里可以直接使用，即给父元素一个类名class clearfix*/
+        .box {
+            font-size: 0;
+        }
+        /* .box:after{
+            display: block;
+            content: '';
+            clear: both;
+        } */
+        .box li {
+            float: left;
+            list-style:none;
+            /* display: inline-block; */
+            height: 50px;
+            width: 100px;
+            text-align: center;
+            line-height: 50px;
+            font-size: 18px;
+
+        }
+        /* 设置box中的li标签为偶数的背景颜色*/
+        .box li:nth-child(odd){
+            background-color: skyblue;
+        }
+         /* 设置box中的li标签为奇数的背景颜色*/
+        .box li:nth-child(even){
+            background-color: thistle;
+        }
+
+    </style>
+</head>
+<body>
+    <ul class="box clearfix">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+</body>
+</html>

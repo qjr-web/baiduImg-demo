@@ -1,0 +1,42 @@
+
+/* id选择器 */
+#box1 {
+    background-color: bisque;
+}
+/* 样式类选择器 */
+.box {
+    color:blue ;
+}
+/* 标签 选择器 */
+div {
+    /* 获取页面中所有标签名为div的元素 */
+    font-size: 24px;
+}
+
+/* 获取所有标签 */
+* {
+    font-style: italic;
+}
+
+/* 群组选择器 */
+div,p {
+    font-weight:bold;
+}
+
+/* 后代选择器  parent的后代a都有这个属性，包括儿子、孙子等*/
+.parent a {
+    font-size: 32px;
+}
+/* 子代选择器  只有parent的儿子a才带有一下属性*/
+.parent>a {
+    color: crimson;
+}
+/* .parent 后代中的a  a所有后代中的带有link样式类  这里只影响“哦哦*/
+.parent a .link {
+    background-color: cyan;
+}
+
+/* parent后代中有link样式的a  这里只影响“好的*/
+.parent a.link {
+    background-color: darkorange;
+}

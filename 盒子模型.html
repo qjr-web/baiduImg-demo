@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>盒子模型</title>
+    <style>
+        /* 传统盒子模型 */
+        /* box1的宽高为 width300+padding40+border10=350*/
+        .box1 {
+            width: 300px;
+            height: 300px;
+            border: 5px solid red;
+            padding: 20px;
+            margin: 20px;
+            /* 首行缩进两字符 */
+            text-indent: 2em;
+            line-height: 50px;
+            letter-spacing: 3px;
+            /* 颜色表示方法：
+                单词
+                16进制#000黑色
+                rgb(红绿蓝)rgb(0.0,0)heise 
+            */
+            color: red;
+            /* overflow:auto；超出边框的情况下自动出现滚动条
+                overflow:hidden;超出边框是隐藏
+            */
+            overflow:auto;
+            background-color: sandybrown;
+            background-image: url("img/1-1-1.webp");
+            background-repeat: no-repeat;
+            background-position: center;
+            /* background-size: 100%; 背景图片 与容器宽度一致*/
+            /* background-size: cover;以最适合的比例铺满整个容器（用得比较多） */
+
+
+            
+        }
+
+        /* 新盒子模型  一旦设定盒子最后的大小width/height，不管怎么调整padding或者border，内容会自动放缩，保证盒子大小不变*/
+        /* box2的宽度为width300 */
+        /* 通过box-sizing:border-box;固定盒子宽高 */
+        .box2 {
+            box-sizing: border-box;
+            width: 300px;
+            height: 300px;
+            border: 5px solid red;
+            padding: 20px;
+            margin: 20px;
+            text-indent: 2em;
+        }
+        img {
+            width: 200px;
+            height: 200px;
+            display:block;
+
+        }
+        body {
+            text-align: center;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="box1">
+        在发布会上，有记者提问指出，在这次新冠肺炎疫情发生过程中，社会慈善捐赠受到大家的高度关注。这个过程中，大家发现了一些问题，比如捐赠难的问题，以及慈善捐赠物资的分配问题，都受到大家的关注。
+    </div>
+    <div class="box2">
+        在发布会上，有记者提问指出，在这次新冠肺炎疫情发生过程中，社会慈善捐赠受到大家的高度关注。这个过程中，大家发现了一些问题，比如捐赠难的问题，以及慈善捐赠物资的分配问题，都受到大家的关注。
+    </div>
+    <img src="img/author1.webp" alt="">
+    <img src="img/2-1-2.webp" alt="">
+</body>
+</html>
